@@ -4,6 +4,8 @@ import { BUSINESS_CONFIG, getWhatsAppLink } from '../config/business';
 import { SERVICES_DATA } from '../data/servicesData';
 import { AHMEDABAD_LOCALITIES } from '../data/areasData';
 
+import { BrandLogo } from './BrandLogo';
+
 interface FooterProps {
   onNavigate: (path: string) => void;
 }
@@ -21,14 +23,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 pb-12 border-b border-slate-800">
           {/* Column 1: Brand & Contact Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-base shadow-sm">
-                ANC
-              </div>
-              <span className="font-bold text-lg text-white tracking-tight">
-                {BUSINESS_CONFIG.name}
-              </span>
-            </div>
+            <BrandLogo size="md" variant="dark" />
+
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               Home nursing and patient-care staffing agency serving families across Ahmedabad, Gujarat. We assist families in matching qualified nurses and dedicated attendants for home convalescence, post-operative care, and elderly assistance.

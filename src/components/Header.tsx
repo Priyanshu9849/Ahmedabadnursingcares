@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
 import { BUSINESS_CONFIG, getWhatsAppLink } from '../config/business';
+import { BrandLogo } from './BrandLogo';
 
 interface HeaderProps {
   currentPath: string;
@@ -50,23 +51,13 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
       {/* Main Navigation Header */}
       <header className="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
-          {/* Zone 1: Brand Wordmark */}
+          {/* Zone 1: Brand Wordmark with custom emblem */}
           <a
             href="/"
             onClick={(e) => handleLinkClick(e, '/')}
-            className="flex items-center gap-2 text-slate-900 group shrink-0"
+            className="flex items-center group shrink-0"
           >
-            <div className="w-10 h-10 rounded-lg bg-teal-800 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-              ANC
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-teal-800 transition-colors whitespace-nowrap">
-                Ahmedabad Nursing Cares
-              </span>
-              <span className="text-[11px] font-medium text-teal-700 tracking-wide uppercase">
-                Home Health Staffing
-              </span>
-            </div>
+            <BrandLogo size="md" variant="light" />
           </a>
 
           {/* Zone 2: Navigation Links (Desktop) */}

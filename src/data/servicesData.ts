@@ -37,7 +37,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Chronic cardiovascular, neurological, or cancer patients requiring close clinical supervision"
     ],
     qualifications: "Registered GNM (General Nursing and Midwifery) or B.Sc Nursing professionals with clinical hospital training.",
-    pricingEstimate: "Typically ₹1,500 – ₹2,200 per 12-hour shift, or ₹400 – ₹700 per single procedure visit, depending on patient acuity and location in Ahmedabad.",
+    pricingEstimate: "Typically ₹1,800 – ₹2,500 per 12-hour shift, or ₹500 – ₹900 per single procedure visit (Rates vary according to patient condition & medical dependency).",
     faqs: [
       {
         question: "What is the difference between a home nurse and a patient attendant in Ahmedabad?",
@@ -134,7 +134,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Individuals recovering from orthopedic fractures or hip replacements"
     ],
     qualifications: "Trained healthcare attendants with background in assisted daily living and basic patient ergonomics.",
-    pricingEstimate: "Estimated between ₹900 – ₹1,300 per 12 hours, or ₹19,000 – ₹26,000 monthly for 24-hour live-in care.",
+    pricingEstimate: "Estimated between ₹1,000 – ₹1,400 per 12 hours, or ₹22,000 – ₹30,000 monthly for 24-hour live-in care (Rates depend on patient dependency & medical condition).",
     faqs: [
       {
         question: "Can a patient care attendant administer oral tablets?",
@@ -179,7 +179,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Families needing dependable night-time supervision to prevent falls"
     ],
     qualifications: "Experienced home patient attendants trained in hygiene, lifting mechanics, and patient handling.",
-    pricingEstimate: "Typically ₹850 – ₹1,200 per 12-hour shift depending on patient weight and physical dependency.",
+    pricingEstimate: "Typically ₹1,000 – ₹1,350 per 12-hour shift depending on patient weight and physical dependency.",
     faqs: [
       {
         question: "Can I choose between a male attendant and a female attendant?",
@@ -224,7 +224,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Elderly individuals who need company and assistance during daytime hours"
     ],
     qualifications: "Available with trained Patient Attendants or certified GNM Home Nurses.",
-    pricingEstimate: "Attendant: ₹900 – ₹1,200 per 12h. Qualified Nurse: ₹1,500 – ₹2,000 per 12h.",
+    pricingEstimate: "Attendant: ₹1,000 – ₹1,350 per 12h. Qualified Nurse: ₹1,800 – ₹2,400 per 12h (Varies by patient mobility & medication needs).",
     faqs: [
       {
         question: "Can we start with a 12-hour day shift and later switch to 24-hour care?",
@@ -269,7 +269,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Terminal or end-stage patients needing compassionate comfort care at home"
     ],
     qualifications: "Experienced live-in caregivers or rotating certified nursing staff.",
-    pricingEstimate: "Live-in Attendant: ₹20,000 – ₹28,000 / month. Rotating 24h Dual Nursing: ₹85,000 – ₹1,10,000 / month.",
+    pricingEstimate: "Live-in Attendant: ₹22,000 – ₹32,000 / month. Rotating 24h Dual Nursing: ₹95,000 – ₹1,25,000 / month (Subject to medical acuity).",
     faqs: [
       {
         question: "What facilities must be provided for a 24-hour live-in caregiver?",
@@ -314,7 +314,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Seniors needing a reliable hand while moving about their home"
     ],
     qualifications: "Patient and mature caregivers trained in geriatric sensitivity and respectful communication.",
-    pricingEstimate: "Ranges from ₹900 – ₹1,200 per 12 hours, or ₹18,000 – ₹25,000 per month for live-in companionship.",
+    pricingEstimate: "Ranges from ₹1,000 – ₹1,350 per 12 hours, or ₹20,000 – ₹28,000 per month for live-in companionship (Varies by elder dependency).",
     faqs: [
       {
         question: "Can the elder caregiver speak Gujarati or Hindi?",
@@ -359,7 +359,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Post-fracture spinal cord injury patients under strict bed rest"
     ],
     qualifications: "Attendants experienced in heavy patient transfers, or GNM nurses for clinical bedridden care.",
-    pricingEstimate: "Attendant: ₹1,000 – ₹1,400 per 12h. Qualified Nurse: ₹1,600 – ₹2,200 per 12h.",
+    pricingEstimate: "Attendant: ₹1,100 – ₹1,500 per 12h. Qualified Nurse: ₹1,900 – ₹2,600 per 12h (Higher for bedsore care & suctioning).",
     faqs: [
       {
         question: "How do you prevent bedsores in a bedridden patient?",
@@ -404,7 +404,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Patients recovering from abdominal, oncological, or neurosurgical procedures"
     ],
     qualifications: "Experienced post-operative GNM / B.Sc surgical ward nurses.",
-    pricingEstimate: "₹1,500 – ₹2,200 per 12 hours, or ₹500 – ₹800 per sterile surgical dressing visit.",
+    pricingEstimate: "₹1,800 – ₹2,500 per 12 hours, or ₹600 – ₹900 per sterile surgical dressing visit (Based on doctor's protocol).",
     faqs: [
       {
         question: "Can your nurse clean and dress a knee replacement surgical wound?",
@@ -451,7 +451,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Families without elder relatives at home during the initial 40 days (chilla/savva mahino)"
     ],
     qualifications: "Experienced postnatal care attendants (Japa maids) with practical experience in newborn handling.",
-    pricingEstimate: "Ranges from ₹1,200 – ₹1,800 per 12 hours, or ₹25,000 – ₹35,000 per month for 24-hour live-in support.",
+    pricingEstimate: "Ranges from ₹1,400 – ₹2,000 per 12 hours, or ₹28,000 – ₹40,000 per month for 24-hour live-in support.",
     faqs: [
       {
         question: "Does the caregiver perform traditional baby oil massage and bath?",

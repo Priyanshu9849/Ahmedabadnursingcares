@@ -23,6 +23,7 @@ import { EnquiryForm } from '../components/EnquiryForm';
 import { CostCalculator } from '../components/CostCalculator';
 import { ReviewsSection } from '../components/ReviewsSection';
 import { SEOHead } from '../components/SEOHead';
+import { SITE_IMAGES } from '../assets/images';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
@@ -140,8 +141,27 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </div>
 
-            {/* Right Column: Instant Enquiry Form */}
-            <div id="enquiry-section" className="lg:col-span-5">
+            {/* Right Column: Real Hero Photo Card + Instant Enquiry Form */}
+            <div id="enquiry-section" className="lg:col-span-5 space-y-4">
+              <div className="relative rounded-2xl overflow-hidden border border-teal-500/30 shadow-2xl">
+                <img
+                  src={SITE_IMAGES.hero}
+                  alt="Professional home nursing and patient care at home in Ahmedabad"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-44 sm:h-52 object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
+                  <div className="flex items-center gap-1.5 font-bold">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    <span>Doorstep Nursing in Ahmedabad</span>
+                  </div>
+                  <span className="text-[11px] bg-teal-800/80 px-2 py-0.5 rounded text-teal-200 font-medium">
+                    Satellite · Bopal · Bodakdev
+                  </span>
+                </div>
+              </div>
+
               <EnquiryForm sourceTitle="Hero Section Lead" />
             </div>
           </div>
@@ -211,7 +231,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
                   <div className="mt-3 bg-slate-50 p-2.5 rounded-lg text-[11px] text-slate-700">
                     <span className="font-semibold text-slate-900">Estimate: </span>
-                    <span>{service.pricingEstimate.split('.')[0]}</span>
+                    <span>{service.pricingEstimate.split('(')[0]}</span>
+                    <span className="block text-[10px] text-amber-700 font-medium mt-0.5">
+                      *दरें मरीज़ की स्थिति के अनुसार (Varies by condition)
+                    </span>
                   </div>
                 </div>
 
@@ -241,11 +264,131 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             ))}
           </div>
+
+          {/* Prominent Bilingual Pricing & Patient Acuity Notice */}
+          <div className="mt-12 p-6 bg-gradient-to-r from-amber-50 via-teal-50/50 to-white border-2 border-amber-300/80 rounded-2xl shadow-xs">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-200/60 text-amber-950 font-bold text-xs rounded-full">
+                  <AlertCircle className="w-4 h-4 text-amber-800" />
+                  <span>दरें मरीज़ की स्थिति व देखभाल की ज़रूरत के अनुसार</span>
+                </div>
+                <h3 className="text-base sm:text-lg font-extrabold text-slate-900">
+                  Rate Information: Final Quotation is Based on Patient Condition
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
+                  प्रत्येक मरीज़ की ज़रूरतें भिन्न होती हैं। मरीज़ का वज़न, हिलने-डुलने की क्षमता (Mobility), मेडिकल उपकरण (IV Drip, Catheter, Suction, Oxygen) और शिफ्ट की अवधि (12h या 24h) देखकर सही व पारदर्शी दरें तय की जाती हैं। कोई छुपा हुआ शुल्क नहीं।
+                </p>
+              </div>
+
+              <div className="shrink-0 flex flex-col sm:flex-row gap-2.5 w-full md:w-auto">
+                <a
+                  href={BUSINESS_CONFIG.phoneTelLink}
+                  className="px-4 py-2.5 bg-teal-800 hover:bg-teal-900 text-white font-bold text-xs rounded-lg text-center flex items-center justify-center gap-2 shadow-xs"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call: {BUSINESS_CONFIG.phone}</span>
+                </a>
+                <a
+                  href={getWhatsAppLink("Hello Ahmedabad Nursing Cares, please share exact rates based on my patient condition in Ahmedabad.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-lg text-center flex items-center justify-center gap-2 shadow-xs"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Ask on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Care Visual Gallery Section */}
+      <section className="py-16 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
+              Dedicated Home Caregiving
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
+              Compassionate Care at Home in Ahmedabad
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+              Realistic, dignified care provided at the patient's bedside by qualified staff.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {/* Photo 1 */}
+            <div className="group overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-2xs hover:shadow-md transition-all">
+              <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img
+                  src={SITE_IMAGES.hero}
+                  alt="Qualified home nurse checking blood pressure of senior patient in Ahmedabad"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-3.5">
+                <div className="text-xs font-bold text-slate-900">Clinical Home Nursing</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Vitals monitoring, BP checks, injections & sterile IV management.</p>
+              </div>
+            </div>
+
+            {/* Photo 2 */}
+            <div className="group overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-2xs hover:shadow-md transition-all">
+              <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img
+                  src={SITE_IMAGES.elderlyCare}
+                  alt="Attendant assisting elderly grandfather walking at home in Ahmedabad"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-3.5">
+                <div className="text-xs font-bold text-slate-900">Elderly Mobility Support</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Walking assistance, fall prevention, sponge bathing & companionship.</p>
+              </div>
+            </div>
+
+            {/* Photo 3 */}
+            <div className="group overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-2xs hover:shadow-md transition-all">
+              <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img
+                  src={SITE_IMAGES.clinicalNurse}
+                  alt="Clinical home nurse managing IV drip and patient monitoring in Ahmedabad"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-3.5">
+                <div className="text-xs font-bold text-slate-900">Post-Op & Bedside Care</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Surgical wound care, IV infusion, catheter management & charting.</p>
+              </div>
+            </div>
+
+            {/* Photo 4 */}
+            <div className="group overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-2xs hover:shadow-md transition-all">
+              <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img
+                  src={SITE_IMAGES.motherBaby}
+                  alt="Japa maid caregiver cradling newborn baby with mother resting peacefully in Ahmedabad"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-3.5">
+                <div className="text-xs font-bold text-slate-900">Mother & Newborn Japa Care</div>
+                <p className="text-[11px] text-slate-500 mt-0.5">Ayurvedic baby oil massage, warm bath & mother postnatal rest.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Interactive Care Cost Calculator Section */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-10">
             <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
@@ -255,7 +398,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               Plan Your Home Care Expenses in Ahmedabad
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 mt-2">
-              No hidden broker commissions. Calculate realistic daily and monthly costs for Attendants and Certified Nurses across Ahmedabad.
+              Calculate realistic daily and monthly costs for Attendants and Certified Nurses. You can also customize your target rate.
             </p>
           </div>
 

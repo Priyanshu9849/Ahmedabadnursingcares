@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Phone,
   MessageCircle,
@@ -10,7 +9,8 @@ import {
   Stethoscope,
   UserCheck,
   Sparkles,
-  Info
+  Info,
+  AlertCircle
 } from 'lucide-react';
 import { ServiceItem } from '../types';
 import { BUSINESS_CONFIG, getWhatsAppLink } from '../config/business';
@@ -18,6 +18,7 @@ import { SERVICES_DATA } from '../data/servicesData';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { EnquiryForm } from '../components/EnquiryForm';
 import { SEOHead } from '../components/SEOHead';
+import { SITE_IMAGES } from '../assets/images';
 
 interface ServicePageProps {
   service: ServiceItem;
@@ -113,6 +114,34 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate })
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Detailed Service Content */}
           <div className="lg:col-span-7 space-y-12">
+            {/* Visual Photography Banner */}
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xs">
+              <img
+                src={
+                  service.id.includes('mother-baby')
+                    ? SITE_IMAGES.motherBaby
+                    : service.category === 'clinical'
+                    ? SITE_IMAGES.clinicalNurse
+                    : service.id.includes('elderly')
+                    ? SITE_IMAGES.elderlyCare
+                    : SITE_IMAGES.hero
+                }
+                alt={`${service.title} provided at home in Ahmedabad`}
+                referrerPolicy="no-referrer"
+                className="w-full h-56 sm:h-72 object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                <span className="font-bold flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>Verified Staffing · Ahmedabad</span>
+                </span>
+                <span className="bg-teal-700/80 backdrop-blur-md px-2.5 py-1 rounded text-teal-100 font-semibold text-[11px]">
+                  Direct Doorstep Deployment
+                </span>
+              </div>
+            </div>
+
             {/* Overview */}
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
@@ -202,13 +231,21 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate })
 
                 <div className="p-3 bg-white rounded-lg border border-slate-200">
                   <div className="font-semibold text-slate-900">Pricing Estimate:</div>
-                  <p className="mt-1 text-slate-700 font-medium">
+                  <p className="mt-1 text-slate-800 font-bold">
                     {service.pricingEstimate}
                   </p>
-                  <p className="text-[11px] text-slate-500 mt-1">
-                    *Final charges vary with patient dependency and specific Ahmedabad locality.
-                  </p>
                 </div>
+              </div>
+
+              {/* Patient Condition Note */}
+              <div className="p-4 bg-amber-50 border border-amber-300 rounded-xl text-amber-950 text-xs space-y-1">
+                <div className="font-bold flex items-center gap-1.5 text-amber-900">
+                  <AlertCircle className="w-4 h-4 text-amber-700 shrink-0" />
+                  <span>दरें मरीज़ की स्थिति के अनुसार (Rates Depend on Patient Condition):</span>
+                </div>
+                <p className="text-[11px] leading-relaxed text-amber-900">
+                  मरीज़ की शारीरिक स्थिति, वज़न, मेडिकल ज़रूरतें (कैथेटर, ऑक्सीजन, ड्रिप, बेडसोर) और शिफ्ट समय के आधार पर सही व सटीक दरें तय की जाती हैं।
+                </p>
               </div>
             </section>
 
